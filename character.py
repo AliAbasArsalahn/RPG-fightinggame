@@ -5,7 +5,7 @@
 from abc import ABC, abstractmethod
 from random import randrange
 
-from attr import attr
+# from attr import attr
 
 
 class Character(ABC):
@@ -14,7 +14,12 @@ class Character(ABC):
         self.name: str = name
         self.race: str = race
         self.inventory: list = []
-        self.attributes = {}
+        self.attributes = {
+            "strength": 0,
+            "intellect": 0,
+            "agility": 0,
+            "stamina": 0
+        }
 
     def __repr__(self) -> str:
         pass
@@ -43,11 +48,13 @@ class Character(ABC):
 
     @property
     def max_health(self) -> int:
+        """returns self.max_health"""
         return self.max_health
 
     @max_health.setter
-    def max_health(self, stamina: int) -> None:
-        self.max_health = stamina * 2
+    def max_health(self) -> None:
+        """Max health for every character is 10 times stamina"""
+        max_health = self.attributes["stamina"] * 10
 
     @property
     def current_health(self) -> int:
@@ -63,3 +70,11 @@ class Character(ABC):
 
     def roll_dice(max_range) -> int:
         return randrange(1, max_range)
+
+    @property
+    def dodge_chance(self) -> float:
+        return self.dodge_chance
+
+    @dodge_chance.setter
+    def dodge_chance(self) -> None:
+        self.dodge_chance = 0.01 * self.attributes["agility"]
