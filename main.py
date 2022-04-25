@@ -1,6 +1,8 @@
 # Projekt: RPG-fightinggame \ Modul: main
 # Author: Ali Abas Arsalahn
 # Datum: 25.04.2022
+"""This module uses the pygame library to run the game"""
+
 
 import pygame
 
@@ -17,6 +19,7 @@ FPS = 60
 def draw_window() -> None:
     """Set's display color to white"""
     WIN.fill(WHITE)
+    WIN.blit()
     pygame.display.update()
 
 
