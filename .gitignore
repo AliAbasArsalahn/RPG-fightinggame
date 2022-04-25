@@ -128,6 +128,6 @@ dmypy.json
 # Pyre type checker
 .pyre/
 
-# Assets
+# Assets (pictures, music, etc.)
 Assets/
 Assets/*
