@@ -98,7 +98,7 @@ class Character(ABC):
         speech = (can_speak_to_peasants, can_speak_to_citizens, can_speak_to_nobles)
         return speech
 
-    def roll_dice(max_range) -> int: # might implement in a seperate modul
+    def roll_dice(max_range: int) -> int: # might implement in a seperate modul
         """returns a random number. Is used to determine damage value of
         every ability."""
         return randrange(1, max_range)
