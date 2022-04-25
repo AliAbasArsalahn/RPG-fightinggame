@@ -18,6 +18,7 @@ class Mage(Character):
     """
 
     def __init__(self, name: str, race: str) -> object:
+        """Mage constructor."""
         super().__init__(name, race)
 
     @property
