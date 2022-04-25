@@ -40,7 +40,7 @@ class Mage(Character):
 
     @mana.setter
     def mana(self, value: int) -> None:
-        """"""
+        """Mana setter."""
         self.mana += value
         if self.mana > self.max_mana:
             self.mana = self.max_mana
