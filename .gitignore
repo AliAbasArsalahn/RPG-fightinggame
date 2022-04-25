@@ -129,5 +129,5 @@ dmypy.json
 .pyre/
 
 # Assets
-.Assets/
-.Assets/*
+Assets/
+Assets/*
