@@ -29,7 +29,7 @@ class Mage(Character):
     @max_mana.setter
     def max_mana(self) -> None:
         """
-        max_mana setter. Each mage player gets 10 mana for every point in 
+        max_mana setter. Each mage player gets 10 mana for every point in
         intelligence
         """
         if self.attributes["intellect"] > 0:
