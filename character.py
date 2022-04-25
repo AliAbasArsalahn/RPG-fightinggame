@@ -1,6 +1,8 @@
 # Projekt: RPG-fightinggame | Modul: character
 # Author: Ali Abas Arsalahn
 # Datum: 21.04.2022
+"""Character modul. Includes the abstract class character and it's methods"""
+
 
 from abc import ABC, abstractmethod
 from random import randrange
@@ -9,7 +11,12 @@ from random import randrange
 
 
 class Character(ABC):
-
+    """
+    Abstract Class Character. Interface for building playable character classes.
+    Methods: level_up, speak, roll_dice
+    properties: name: str, race: str, attributes: dict, level: int, experience: int
+    max_health: int, current_health: int, dodge_chance: float
+    """
     def __init__(self, name: str, race: str) -> object:
         self.name: str = name
         self.race: str = race
@@ -23,11 +30,11 @@ class Character(ABC):
 
     def __repr__(self) -> str:
         """must be implemented by every subclass"""
-        pass
+        return f"{self.name}, {self.race}"
 
     def __str__(self) -> str:
         """must be implemented by every subclass"""
-        pass
+        return f"Character name: {self.name}, race: {self.race}"
 
     @property
     def level(self) -> int:
@@ -78,12 +85,21 @@ class Character(ABC):
         self.current_health -= damage
 
     @abstractmethod
-    def speak() -> str:
-        """Needs an implementation by every subclass"""
-        pass
+    def speak(self) -> tuple: # no application planned yet
+        """checks intelligence attributes and allows speach acording to the stat."""
+        intelligence = self.attributes.get("intelligence")
+        if intelligence > 3:
+            can_speak_to_peasants = True
+        if intelligence > 5:
+            can_speak_to_citizens = True
+        if intelligence > 8:
+            can_speak_to_nobles = True
 
-    def roll_dice(max_range) -> int:
-        """returns a random number. Is used to determine damage value of 
+        speech = (can_speak_to_peasants, can_speak_to_citizens, can_speak_to_nobles)
+        return speech
+
+    def roll_dice(max_range) -> int: # might implement in a seperate modul
+        """returns a random number. Is used to determine damage value of
         every ability."""
         return randrange(1, max_range)
 
