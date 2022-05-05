@@ -7,7 +7,7 @@ Module: Mage.
 implementes methods and attributes for the mage class.
 """
 
-
+from interactions import roll_dice
 from character import Character
 
 class Mage(Character):
