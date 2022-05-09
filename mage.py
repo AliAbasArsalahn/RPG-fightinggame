@@ -50,7 +50,7 @@ class Mage(Character):
 
     def fireball(self, other: object) -> None:
         """fireball. Damage=2d7"""
-        fireball_dmg = self.roll_dice(8) + 2
+        fireball_dmg = roll_dice(8) * 2
         other.current_health -= fireball_dmg
 
     def magic_missile(self, other: object) -> None:
