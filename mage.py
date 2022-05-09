@@ -17,14 +17,14 @@ class Mage(Character):
     properties: max_mana, mana
     """
 
-    def __init__(self, name: str, race: str) -> object:
+    def __init__(self, name: str, race: str, mana=0) -> object:
         """Mage constructor."""
         super().__init__(name, race)
-
+        self.mana = mana
     @property
     def max_mana(self) -> int:
         """max_mana getter"""
-        return self.max_mana
+        return self._max_mana
 
     @max_mana.setter
     def max_mana(self) -> None:
@@ -37,7 +37,7 @@ class Mage(Character):
 
     @property
     def mana(self) -> int:
-        return self.mana
+        return self._mana
 
     @mana.setter
     def mana(self, value: int) -> None:
