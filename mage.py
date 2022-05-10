@@ -13,14 +13,16 @@ from character import Character
 class Mage(Character):
     """
     class: mage
-    methods: Fireball, 
+    methods: Fireball, magic missile 
     properties: max_mana, mana
     """
 
-    def __init__(self, name: str, race: str, mana=0) -> object:
+    def __init__(self, name: str, race: str, mana=0, max_mana=0) -> None:
         """Mage constructor."""
         super().__init__(name, race)
         self.mana = mana
+        self.max_mana = max_mana
+
     @property
     def max_mana(self) -> int:
         """max_mana getter"""
@@ -33,7 +35,7 @@ class Mage(Character):
         intelligence
         """
         if self.attributes["intellect"] > 0:
-            self.max_mana = self.attributes["intellect"] * 10
+            self._max_mana = self.attributes["intellect"] * 10
 
     @property
     def mana(self) -> int:
@@ -42,11 +44,11 @@ class Mage(Character):
     @mana.setter
     def mana(self, value: int) -> None:
         """Mana setter."""
-        self.mana += value
-        if self.mana > self.max_mana:
-            self.mana = self.max_mana
-        if self.mana < 0:
-            self.mana = 0
+        self._mana += value
+        if self._mana > self._max_mana:
+            self._mana = self._max_mana
+        if self._mana < 0:
+            self._mana = 0
 
     def fireball(self, other: object) -> None:
         """fireball. Damage=2d7"""
