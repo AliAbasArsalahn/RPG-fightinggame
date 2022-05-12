@@ -14,7 +14,7 @@ from character import Character
 class Mage(Character):
     """
     class: mage
-    methods: Fireball, magic missile 
+    methods: Fireball, magic missile
     properties: max_mana, mana
     """
 

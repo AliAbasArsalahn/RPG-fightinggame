@@ -16,7 +16,7 @@ class Interactions:
         """Returns a random integer"""
         return randrange(1, max_range)
 
-
+    # incomplete
     def combat(object_1: object, object_2: object) -> None:
         """Combat function."""
         both_combatants_alive = True
