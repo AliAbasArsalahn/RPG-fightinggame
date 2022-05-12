@@ -17,6 +17,7 @@ class Character(ABC):
     properties: name: str, race: str, attributes: dict, level: int, experience: int
     max_health: int, current_health: int, dodge_chance: float
     """
+
     def __init__(self, name: str, race: str) -> object:
         self.name: str = name
         self.race: str = race
@@ -84,8 +85,7 @@ class Character(ABC):
         on every enemy attack."""
         self.current_health -= damage
 
-    @abstractmethod
-    def speak(self) -> tuple: # no application planned yet
+    def speak(self) -> tuple:
         """checks intelligence attributes and allows speach acording to the stat."""
         intelligence = self.attributes.get("intelligence")
         if intelligence > 3:
@@ -95,10 +95,11 @@ class Character(ABC):
         if intelligence > 8:
             can_speak_to_nobles = True
 
-        speech = (can_speak_to_peasants, can_speak_to_citizens, can_speak_to_nobles)
+        speech = (can_speak_to_peasants,
+                  can_speak_to_citizens, can_speak_to_nobles)
         return speech
 
-    def roll_dice(max_range: int) -> int: # might implement in a seperate modul
+    def roll_dice(max_range: int) -> int:  # might implement in a seperate modul
         """returns a random number. Is used to determine damage value of
         every ability."""
         return randrange(1, max_range)

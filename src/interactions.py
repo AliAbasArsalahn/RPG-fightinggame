@@ -15,4 +15,4 @@ def combat(object_1: object, object_2: object) -> None:
     """Combat function."""
     both_combatants_alive = True
     while both_combatants_alive:
-        
+        pass

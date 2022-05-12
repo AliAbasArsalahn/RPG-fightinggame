@@ -7,7 +7,7 @@ Test_mage Module
 
 
 import unittest
-from .. import Mage
+from mage import Mage
 
 
 class TestMage(unittest.TestCase):
