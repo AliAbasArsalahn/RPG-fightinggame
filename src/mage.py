@@ -1,13 +1,7 @@
-# Projekt RPG-fightinggame \ Modul: mage
-# Author: Ali Abas Arsalahn
-# Datum: 21.04.2022
-
 """
 Module: Mage.
 implementes methods and attributes for the mage class.
 """
-
-from interactions import roll_dice
 from character import Character
 
 
@@ -21,8 +15,8 @@ class Mage(Character):
     def __init__(self, name: str, race: str, mana=0, max_mana=0) -> None:
         """Mage constructor."""
         super().__init__(name, race)
-        self.mana = mana
-        self.max_mana = max_mana
+        self._mana = mana
+        self._max_mana = max_mana
 
     @property
     def max_mana(self) -> int:
@@ -35,8 +29,8 @@ class Mage(Character):
         max_mana setter. Each mage player gets 10 mana for every point in
         intelligence
         """
-        if self.attributes["intellect"] > 0:
-            self._max_mana = self.attributes["intellect"] * 10
+        if self._attributes["intellect"] > 0:
+            self._max_mana = self._attributes["intellect"] * 10
 
     @property
     def mana(self) -> int:
@@ -53,7 +47,7 @@ class Mage(Character):
 
     def fireball(self, other: object) -> None:
         """fireball. Damage=2d7"""
-        fireball_dmg = roll_dice(8) * 2
+        fireball_dmg = self.interactions.roll_dice(8) * 2
         other.current_health -= fireball_dmg
 
     def magic_missile(self, other: object) -> None:

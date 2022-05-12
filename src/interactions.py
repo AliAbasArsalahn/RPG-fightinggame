@@ -1,7 +1,3 @@
-# Projekt: RPG-fightinggame | Modul: interactions
-# Author: Ali Abas Arsalahn
-# Datum: 26.04.2022
-
 """This module hosts interactions between character objects"""
 
 from random import randrange
@@ -23,16 +19,16 @@ class Interactions:
         while both_combatants_alive:
             pass
 
-        def speak(self) -> tuple:
-        """checks intelligence attributes and allows speach acording to the stat."""
-        intelligence = self.attributes.get("intelligence")
-        if intelligence > 3:
-            can_speak_to_peasants = True
-        if intelligence > 5:
-            can_speak_to_citizens = True
-        if intelligence > 8:
-            can_speak_to_nobles = True
+    def speak(self) -> tuple:
+    """checks intelligence attributes and allows speach acording to the stat."""
+    intelligence = self._attributes.get("intelligence")
+    if intelligence > 3:
+        can_speak_to_peasants = True
+    if intelligence > 5:
+        can_speak_to_citizens = True
+    if intelligence > 8:
+        can_speak_to_nobles = True
 
-        speech = (can_speak_to_peasants,
-                  can_speak_to_citizens, can_speak_to_nobles)
-        return speech
+    speech = (can_speak_to_peasants,
+              can_speak_to_citizens, can_speak_to_nobles)
+    return speech

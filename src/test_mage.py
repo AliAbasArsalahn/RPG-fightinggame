@@ -1,6 +1,3 @@
-# Projekt RPG-Fightinggame | Modul: test_mage
-# Author: Ali Abas Arsalahn
-
 """
 Test_mage Module
 """
@@ -22,7 +19,7 @@ class TestMage(unittest.TestCase):
         pass
 
     def test_mana(self) -> None:
-        self.assertTrue(self.test_mage.mana(20), self.test_mage.mana() == 20)
+        self.assertTrue(self.test_mage._mana(20), self.test_mage._mana() == 20)
 
 
 if __name__ == '__main__':
