@@ -19,16 +19,5 @@ class Interactions:
         while both_combatants_alive:
             pass
 
-    def speak(self) -> tuple:
-    """checks intelligence attributes and allows speach acording to the stat."""
-    intelligence = self._attributes.get("intelligence")
-    if intelligence > 3:
-        can_speak_to_peasants = True
-    if intelligence > 5:
-        can_speak_to_citizens = True
-    if intelligence > 8:
-        can_speak_to_nobles = True
-
-    speech = (can_speak_to_peasants,
-              can_speak_to_citizens, can_speak_to_nobles)
-    return speech
+    def speak() -> None:
+        pass
