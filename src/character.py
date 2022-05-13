@@ -18,17 +18,27 @@ class Character():
         """
         self._name: str = name
         self._race: str = race
-        self._inventory: list = []
-        self.attributes: object = Attributes()
-        self.interactions: object = Interactions()
+        # self._inventory: list = []
+        self.attributes: object = Attributes
+        self.interactions: object = Interactions
 
     def __repr__(self) -> str:
-        """must be implemented by every subclass"""
+        """repr method"""
         return f"{self._name}, {self._race}"
 
     def __str__(self) -> str:
-        """must be implemented by every subclass"""
+        """str method"""
         return f"Character name: {self._name}, race: {self._race}"
+
+    @property
+    def race(self) -> str:
+        return self._race
+
+    @race.setter
+    def race(self, racepick: str) -> None:
+        AVAILABLE_RACES = ['Human', 'Dwarf', 'Elf']
+        if racepick in AVAILABLE_RACES:
+            self._race = racepick
 
     def move(self) -> None:
         pass

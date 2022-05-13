@@ -5,7 +5,7 @@ class Attributes():
     """
     Attributes class.
     Includes: level, experience, strength, intellect, agility, stamina
-    methods: 
+    methods:
     """
     def __init__(self) -> None:
         """Constructor"""
@@ -16,7 +16,7 @@ class Attributes():
         self._agility: int = None
         self._stamina: int = None
         self._mana: int = None
-        self._max_mana = None
+        # self._max_mana: int = None
 
     @property
     def level(self) -> int:
@@ -72,20 +72,20 @@ class Attributes():
         if value > 0:
             self._stamina = value
 
-    @property
-    def max_mana(self) -> int:
-        """max_mana getter"""
-        return self._max_mana
+    # @property
+    # def max_mana(self) -> int:
+    #     """max_mana getter"""
+    #     return self._max_mana
 
-    @max_mana.setter
-    def max_mana(self) -> None:
-        """
-        max_mana setter. Each mage player gets 10 mana for every point in
-        intelligence
-        """
-        MANA_MULTIPLIER = self.intellect * 10
-        if self.intellect is not None:
-            self._max_mana += MANA_MULTIPLIER
+    # @max_mana.setter
+    # def max_mana(self) -> None:
+    #     """
+    #     max_mana setter. Each mage player gets 10 mana for every point in
+    #     intelligence
+    #     """
+    #     MANA_MULTIPLIER = self.intellect * 10
+    #     if self.intellect is not None:
+    #         self._max_mana += MANA_MULTIPLIER
 
     @property
     def mana(self) -> int:
@@ -94,9 +94,10 @@ class Attributes():
     @mana.setter
     def mana(self, value: int) -> None:
         """Mana setter."""
-        self._mana += value
-        if self._mana > self._max_mana:
-            self._mana = self._max_mana
+        MAX_MANA = self.intellect * 10
+        self._mana = value
+        if self._mana > MAX_MANA:
+            self._mana = MAX_MANA
         if self._mana < 0:
             self._mana = 0
 

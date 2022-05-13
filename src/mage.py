@@ -15,8 +15,6 @@ class Mage(Character):
     def __init__(self, name: str, race: str) -> None:
         """Mage constructor."""
         super().__init__(name, race)
-        self.attributes = super().attributes
-        self.interactions = super().interactions
 
     # @property
     # def max_mana(self) -> int:
