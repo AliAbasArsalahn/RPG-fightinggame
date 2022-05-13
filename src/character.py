@@ -7,8 +7,6 @@ from attributes import Attributes
 
 class Character():
     """
-    Abstract Class Character. Interface for building playable character classes.
-    Methods: level_up, speak, roll_dice
     properties: name: str, race: str, attributes: dict, level: int, experience: int
     max_health: int, current_health: int, dodge_chance: float
     """
@@ -21,7 +19,7 @@ class Character():
         self._name: str = name
         self._race: str = race
         self._inventory: list = []
-        self._attributes: object = Attributes()
+        self.attributes: object = Attributes()
         self.interactions: object = Interactions()
 
     def __repr__(self) -> str:
@@ -32,12 +30,14 @@ class Character():
         """must be implemented by every subclass"""
         return f"Character name: {self._name}, race: {self._race}"
 
-    @property
-    def dodge_chance(self) -> float:
-        """dodge_chance getter"""
-        return self.dodge_chance
+    def move(self) -> None:
+        pass
+    # @property
+    # def dodge_chance(self) -> float:
+    #     """dodge_chance getter"""
+    #     return self.dodge_chance
 
-    @dodge_chance.setter
-    def dodge_chance(self) -> None:
-        """dodge_chance setter"""
-        self.dodge_chance = 0.01 * self._attributes["agility"]
+    # @dodge_chance.setter
+    # def dodge_chance(self) -> None:
+    #     """dodge_chance setter"""
+    #     self.dodge_chance = 0.01 * self._attributes["agility"]

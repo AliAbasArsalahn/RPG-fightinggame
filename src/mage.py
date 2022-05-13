@@ -15,35 +15,35 @@ class Mage(Character):
     def __init__(self, name: str, race: str) -> None:
         """Mage constructor."""
         super().__init__(name, race)
-        self._mana: int = None
-        self._max_mana: int = None
+        self.attributes = super().attributes
+        self.interactions = super().interactions
 
-    @property
-    def max_mana(self) -> int:
-        """max_mana getter"""
-        return self._max_mana
+    # @property
+    # def max_mana(self) -> int:
+    #     """max_mana getter"""
+    #     return self._max_mana
 
-    @max_mana.setter
-    def max_mana(self) -> None:
-        """
-        max_mana setter. Each mage player gets 10 mana for every point in
-        intelligence
-        """
-        if self._attributes["intellect"] > 0:
-            self._max_mana = self._attributes["intellect"] * 10
+    # @max_mana.setter
+    # def max_mana(self) -> None:
+    #     """
+    #     max_mana setter. Each mage player gets 10 mana for every point in
+    #     intelligence
+    #     """
+    #     if self.attributes["intellect"] > 0:
+    #         self._max_mana = self.attributes["intellect"] * 10
 
-    @property
-    def mana(self) -> int:
-        return self._mana
+    # @property
+    # def mana(self) -> int:
+    #     return self._mana
 
-    @mana.setter
-    def mana(self, value: int) -> None:
-        """Mana setter."""
-        self._mana += value
-        if self._mana > self._max_mana:
-            self._mana = self._max_mana
-        if self._mana < 0:
-            self._mana = 0
+    # @mana.setter
+    # def mana(self, value: int) -> None:
+    #     """Mana setter."""
+    #     self._mana += value
+    #     if self._mana > self._max_mana:
+    #         self._mana = self._max_mana
+    #     if self._mana < 0:
+    #         self._mana = 0
 
     def fireball(self, other: object) -> None:
         """fireball. Damage=2d7"""

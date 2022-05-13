@@ -5,6 +5,7 @@ class Attributes():
     """
     Attributes class.
     Includes: level, experience, strength, intellect, agility, stamina
+    methods: 
     """
     def __init__(self) -> None:
         """Constructor"""
@@ -14,6 +15,8 @@ class Attributes():
         self._intellect: int = None
         self._agility: int = None
         self._stamina: int = None
+        self._mana: int = None
+        self._max_mana = None
 
     @property
     def level(self) -> int:
@@ -68,3 +71,34 @@ class Attributes():
     def stamina(self, value: int) -> None:
         if value > 0:
             self._stamina = value
+
+    @property
+    def max_mana(self) -> int:
+        """max_mana getter"""
+        return self._max_mana
+
+    @max_mana.setter
+    def max_mana(self) -> None:
+        """
+        max_mana setter. Each mage player gets 10 mana for every point in
+        intelligence
+        """
+        MANA_MULTIPLIER = self.intellect * 10
+        if self.intellect is not None:
+            self._max_mana += MANA_MULTIPLIER
+
+    @property
+    def mana(self) -> int:
+        return self._mana
+
+    @mana.setter
+    def mana(self, value: int) -> None:
+        """Mana setter."""
+        self._mana += value
+        if self._mana > self._max_mana:
+            self._mana = self._max_mana
+        if self._mana < 0:
+            self._mana = 0
+
+    def levelup(self) -> None:
+        pass

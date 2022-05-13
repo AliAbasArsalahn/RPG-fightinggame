@@ -13,14 +13,14 @@ class TestMage(unittest.TestCase):
     """
 
     def setUp(self) -> None:
-        self.test_mage = Mage('Gandalf', 'Human')
-        self.test_mage.mana = 100
+        self.mage = Mage('Gandalf', 'Human')
+        self.mage.attributes.mana = 100
 
     def tearDown(self) -> None:
         pass
 
     def test_mana(self) -> None:
-        self.assertTrue(self.test_mage.mana -= 10, self.test_mage.mana == 90)
+        self.assertTrue(self.mage.attributes.mana == 100)
 
 
 if __name__ == '__main__':

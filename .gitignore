@@ -131,3 +131,7 @@ dmypy.json
 # Assets (pictures, music, etc.)
 Assets/
 Assets/*
+
+# vscode
+.vscode
+.vscode/*
