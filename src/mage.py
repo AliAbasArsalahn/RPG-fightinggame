@@ -12,11 +12,11 @@ class Mage(Character):
     properties: max_mana, mana
     """
 
-    def __init__(self, name: str, race: str, mana=0, max_mana=0) -> None:
+    def __init__(self, name: str, race: str) -> None:
         """Mage constructor."""
         super().__init__(name, race)
-        self._mana = mana
-        self._max_mana = max_mana
+        self._mana: int = None
+        self._max_mana: int = None
 
     @property
     def max_mana(self) -> int:
