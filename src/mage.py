@@ -16,33 +16,6 @@ class Mage(Character):
         """Mage constructor."""
         super().__init__(name, race)
 
-    # @property
-    # def max_mana(self) -> int:
-    #     """max_mana getter"""
-    #     return self._max_mana
-
-    # @max_mana.setter
-    # def max_mana(self) -> None:
-    #     """
-    #     max_mana setter. Each mage player gets 10 mana for every point in
-    #     intelligence
-    #     """
-    #     if self.attributes["intellect"] > 0:
-    #         self._max_mana = self.attributes["intellect"] * 10
-
-    # @property
-    # def mana(self) -> int:
-    #     return self._mana
-
-    # @mana.setter
-    # def mana(self, value: int) -> None:
-    #     """Mana setter."""
-    #     self._mana += value
-    #     if self._mana > self._max_mana:
-    #         self._mana = self._max_mana
-    #     if self._mana < 0:
-    #         self._mana = 0
-
     def fireball(self, other: object) -> None:
         """fireball. Damage=2d7"""
         fireball_dmg = self.interactions.roll_dice(8) * 2
@@ -55,8 +28,8 @@ class Mage(Character):
 
     def mirror_images(self) -> None:
         """increases self.dodgechance for 2 rounds by 50%"""
-        self.dodge_chance += 0.5
+        self.attributes.dodge_chance += 0.5
 
     def healing(self) -> None:
         """calls function roll dice. Increases current_health by that amount"""
-        self.current_health += self.roll_dice(5)
+        self.attributes.current_health += self.interactions.roll_dice(5)

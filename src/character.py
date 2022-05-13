@@ -42,12 +42,3 @@ class Character():
 
     def move(self) -> None:
         pass
-    # @property
-    # def dodge_chance(self) -> float:
-    #     """dodge_chance getter"""
-    #     return self.dodge_chance
-
-    # @dodge_chance.setter
-    # def dodge_chance(self) -> None:
-    #     """dodge_chance setter"""
-    #     self.dodge_chance = 0.01 * self._attributes["agility"]
