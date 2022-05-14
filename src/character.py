@@ -3,6 +3,7 @@
 
 from interactions import Interactions
 from attributes import Attributes
+from names import Name
 
 
 class Character():
@@ -11,7 +12,7 @@ class Character():
     max_health: int, current_health: int, dodge_chance: float
     """
 
-    def __init__(self, name: str, race: str) -> object:
+    def __init__() -> None:
         """
         Character Creation.
         Required Arguments: Name, Race

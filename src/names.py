@@ -6,9 +6,19 @@ class Name:
 
     def __init__(self) -> None:
         """Name objects consist of first name, last name and an alias."""
+        self._title: str = None
         self._first_name: str = None
         self._last_name: str = None
         self._alias: str = None
+
+    @property
+    def title(self) -> str:
+        """returns the title property"""
+        return self._title
+
+    @title.setter
+    def title(self, value: str) -> None:
+        pass
 
     @property
     def first_name(self) -> str:

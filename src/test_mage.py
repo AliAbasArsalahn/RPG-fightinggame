@@ -13,7 +13,7 @@ class TestMage(unittest.TestCase):
     """
 
     def setUp(self) -> None:
-        self.mage = Mage('Gandalf', 'Human')
+        self.mage = Mage()
         self.mage.attributes.mana = 100
 
     def tearDown(self) -> None:
