@@ -20,8 +20,7 @@ class TestMage(unittest.TestCase):
         self.mage.attributes.agility = 10
         self.mage.attributes.mana = 100
         self.enemy = Rogue()
-        self.enemy.attributes.stamina = 10 
-        
+        self.enemy.attributes.stamina = 10
 
     def tearDown(self) -> None:
         pass
@@ -34,6 +33,7 @@ class TestMage(unittest.TestCase):
 
     def test_magic_missile(self) -> None:
         pass
+
 
 if __name__ == '__main__':
     unittest.main()
