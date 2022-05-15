@@ -10,6 +10,8 @@ class Attributes():
 
     def __init__(self) -> None:
         """sets attributes as None."""
+        self._health: int = None
+        self._max_health: int = None
         self._level: int = None
         self._experience: int = None
         self._strength: int = None
@@ -18,6 +20,25 @@ class Attributes():
         self._stamina: int = None
         self._mana: int = None
         self._dodge_chance: float = None
+
+    @property
+    def health(self) -> int:
+        """returns health."""
+        return self._health
+
+    @health.setter
+    def health(self, value: int) -> None:
+        """increases or decreases health."""
+        self._health += value
+
+    @property
+    def max_health(self) -> int:
+        """returns max health"""
+        return self._max_health
+
+    @max_health.setter
+    def max_health(self) -> None:
+        self._max_health = self._stamina * 10
 
     @property
     def level(self) -> int:
