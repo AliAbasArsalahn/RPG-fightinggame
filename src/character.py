@@ -20,7 +20,6 @@ class Character():
         """
         self.name = Name()
         self.race = Race()
-        # self._inventory: list = []
         self.attributes = Attributes()
         self.interactions = Interactions()
 
@@ -31,16 +30,6 @@ class Character():
     def __str__(self) -> str:
         """str method"""
         pass
-
-    # @property
-    # def race(self) -> str:
-    #     return self._race
-
-    # @race.setter
-    # def race(self, racepick: str) -> None:
-    #     AVAILABLE_RACES = ['Human', 'Dwarf', 'Elf']
-    #     if racepick in AVAILABLE_RACES:
-    #         self._race = racepick
 
     def move(self) -> None:
         pass

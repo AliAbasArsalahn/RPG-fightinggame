@@ -17,6 +17,7 @@ class Attributes():
         self._agility: int = None
         self._stamina: int = None
         self._mana: int = None
+        self._dodge_chance: float = None
 
     @property
     def level(self) -> int:
@@ -98,6 +99,20 @@ class Attributes():
             self._mana = MAX_MANA
         if self._mana < 0:
             self._mana = 0
+
+    @property
+    def dodge_chance(self) -> float:
+        return self._dodge_chance
+
+    @dodge_chance.setter
+    def dodge_chance(self, value: float) -> None:
+        """
+        sets dodge chance as 1% for each point of agility.
+        manipulates dodge_chance if a value is given.
+        """
+        self._dodge_chance = self._agility / 10
+        if value:
+            self._dodge_chance += value
 
     def levelup(self) -> None:
         """

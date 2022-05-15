@@ -8,19 +8,22 @@ from character import Character
 class Mage(Character):
     """
     class: mage
-    methods: Fireball, magic missile
-    properties: max_mana, mana
+    methods: Fireball, magic missile, mirror images, healing
+    inherits: Name, race, attributes, interactions from character.
     """
 
-    def fireball(self, other: object) -> None:
-        """fireball. Damage=2d7"""
-        fireball_dmg = self.interactions.roll_dice(8) * 2
-        other.current_health -= fireball_dmg
+    def fireball(self, target: object) -> None:
+        """computes fireball damage. Damage=2d7"""
+        ROLL_MULTIPLIER = 2
+        DAMAGE_MULTIPLIER = 8
+        fireball_dmg = self.interactions.roll_dice(
+            DAMAGE_MULTIPLIER) * ROLL_MULTIPLIER
+        target.health -= fireball_dmg
 
-    def magic_missile(self, other: object) -> None:
-        """magic missile. Damage=1d6"""
+    def magic_missile(self, target: object) -> None:
+        """computes magic missile damage. Damage=1d6"""
         magic_missile_damage = self.roll_dice(7)
-        other.current_health -= magic_missile_damage
+        target.health -= magic_missile_damage
 
     def mirror_images(self) -> None:
         """increases self.dodgechance for 2 rounds by 50%"""

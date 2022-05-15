@@ -5,9 +5,13 @@ class Race():
     """Race Class. Component of characters and non-character objects"""
 
     def __init__(self) -> None:
-        self.AVAILABLE_RACES = ['Human', 'Dwarf', 'Elf']
-        self._race = None
-        self.perk = None
+        """
+        Race object gets created with an array of available races,
+        the selected race and it's linked perk.
+        """
+        self.AVAILABLE_RACES: list[str] = ['Human', 'Dwarf', 'Elf']
+        self._race: str = None
+        self.perk: object = None
 
     @property
     def race(self) -> None:
