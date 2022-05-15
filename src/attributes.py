@@ -10,14 +10,16 @@ class Attributes():
 
     def __init__(self) -> None:
         """sets attributes as None."""
+        self._stamina: int = None
         self._health: int = None
-        self._level: int = None
-        self._experience: int = None
+        self._max_health: int = None
         self._strength: int = None
         self._intellect: int = None
+        self._level: int = None
+        self._experience: int = None
         self._agility: int = None
-        self._stamina: int = None
         self._mana: int = None
+        self._max_mana: int = None
         self._dodge_chance: float = None
 
     @property
@@ -29,10 +31,8 @@ class Attributes():
     def health(self, value: int) -> None:
         """increases or decreases health."""
         self._health += value
-        HEALTH_MULTIPLIER = 10
-        MAX_HEALTH = self.stamina * HEALTH_MULTIPLIER
-        if self._health > MAX_HEALTH:
-            self._health = MAX_HEALTH
+        if self._health > self._max_health:
+            self._health = self._max_health
 
     @property
     def level(self) -> int:
@@ -77,6 +77,22 @@ class Attributes():
         """sets intellect if value is not 0 or less than 0."""
         if value > 0:
             self._intellect = value
+        MANA_MULTIPLIER = 10
+        self._max_mana = self._intellect * MANA_MULTIPLIER
+
+    @property
+    def mana(self) -> int:
+        """returns mana."""
+        return self._mana
+
+    @mana.setter
+    def mana(self, value: int) -> None:
+        """Sets mana if value is """
+        self._mana = value
+        if self._mana > self._max_mana:
+            self._mana = self._max_mana
+        if self._mana < 0:
+            self._mana = 0
 
     @property
     def agility(self) -> int:
@@ -88,6 +104,8 @@ class Attributes():
         """sets agility if value is not 0 or less than 0."""
         if value >= 0:
             self._agility = value
+        DODGE_CHANCE_MULTIPLIER = 0.01
+        self._dodge_chance = self._agility * DODGE_CHANCE_MULTIPLIER
 
     @property
     def stamina(self) -> int:
@@ -99,21 +117,8 @@ class Attributes():
         """sets stamina if stamina is not 0 or less than 0."""
         if value > 0:
             self._stamina = value
-
-    @property
-    def mana(self) -> int:
-        """returns mana."""
-        return self._mana
-
-    @mana.setter
-    def mana(self, value: int) -> None:
-        """Sets mana if value is """
-        MAX_MANA = self.intellect * 10
-        self._mana = value
-        if self._mana > MAX_MANA:
-            self._mana = MAX_MANA
-        if self._mana < 0:
-            self._mana = 0
+        HEALTH_MULTIPLIER = 10
+        self._max_health = self._stamina * HEALTH_MULTIPLIER
 
     @property
     def dodge_chance(self) -> float:
@@ -125,7 +130,6 @@ class Attributes():
         sets dodge chance as 1% for each point of agility.
         manipulates dodge_chance if a value is given.
         """
-        self._dodge_chance = self._agility / 10
         if value:
             self._dodge_chance += value
 
