@@ -4,6 +4,7 @@
 from interactions import Interactions
 from attributes import Attributes
 from names import Name
+from race import Race
 
 
 class Character():
@@ -17,11 +18,11 @@ class Character():
         Character Creation.
         Required Arguments: Name, Race
         """
-        self.name = Name
-        self.race = None
+        self.name = Name()
+        self.race = Race()
         # self._inventory: list = []
         self.attributes = Attributes()
-        self.interactions = Interactions
+        self.interactions = Interactions()
 
     def __repr__(self) -> str:
         """repr method"""
@@ -31,15 +32,15 @@ class Character():
         """str method"""
         pass
 
-    @property
-    def race(self) -> str:
-        return self._race
+    # @property
+    # def race(self) -> str:
+    #     return self._race
 
-    @race.setter
-    def race(self, racepick: str) -> None:
-        AVAILABLE_RACES = ['Human', 'Dwarf', 'Elf']
-        if racepick in AVAILABLE_RACES:
-            self._race = racepick
+    # @race.setter
+    # def race(self, racepick: str) -> None:
+    #     AVAILABLE_RACES = ['Human', 'Dwarf', 'Elf']
+    #     if racepick in AVAILABLE_RACES:
+    #         self._race = racepick
 
     def move(self) -> None:
         pass
