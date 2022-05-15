@@ -12,9 +12,6 @@ class Mage(Character):
     properties: max_mana, mana
     """
 
-    def __init__(self) -> None:
-        """Mage constructor."""
-
     def fireball(self, other: object) -> None:
         """fireball. Damage=2d7"""
         fireball_dmg = self.interactions.roll_dice(8) * 2
