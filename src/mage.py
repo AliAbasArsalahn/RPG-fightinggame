@@ -12,9 +12,8 @@ class Mage(Character):
     properties: max_mana, mana
     """
 
-    def __init__(self, name: str, race: str) -> None:
+    def __init__(self) -> None:
         """Mage constructor."""
-        super().__init__(name, race)
 
     def fireball(self, other: object) -> None:
         """fireball. Damage=2d7"""

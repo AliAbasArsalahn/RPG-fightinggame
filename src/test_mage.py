@@ -14,6 +14,8 @@ class TestMage(unittest.TestCase):
 
     def setUp(self) -> None:
         self.mage = Mage()
+        self.mage.attributes.
+        self.mage.attributes.intellect = 10
         self.mage.attributes.mana = 100
 
     def tearDown(self) -> None:

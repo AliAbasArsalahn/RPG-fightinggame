@@ -12,24 +12,24 @@ class Character():
     max_health: int, current_health: int, dodge_chance: float
     """
 
-    def __init__() -> None:
+    def __init__(self) -> None:
         """
         Character Creation.
         Required Arguments: Name, Race
         """
-        self._name: str = name
-        self._race: str = race
+        self.name = Name
+        self.race = None
         # self._inventory: list = []
-        self.attributes: object = Attributes
-        self.interactions: object = Interactions
+        self.attributes = Attributes()
+        self.interactions = Interactions
 
     def __repr__(self) -> str:
         """repr method"""
-        return f"{self._name}, {self._race}"
+        pass
 
     def __str__(self) -> str:
         """str method"""
-        return f"Character name: {self._name}, race: {self._race}"
+        pass
 
     @property
     def race(self) -> str:
