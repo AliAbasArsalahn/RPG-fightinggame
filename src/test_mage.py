@@ -27,7 +27,12 @@ class TestMage(unittest.TestCase):
         pass
 
     def test_fireball(self) -> None:
+        """
+        Fireball damage in expected range
+        Fireball is able to decrease enemy health
+        """
         pass
+            
 
     def test_magic_missile(self) -> None:
         pass
