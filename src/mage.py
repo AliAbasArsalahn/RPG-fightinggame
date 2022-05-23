@@ -15,7 +15,7 @@ class Mage(Character):
     def fireball(self, target: object) -> None:
         """computes fireball damage. Damage=2d7"""
         ROLL_MULTIPLIER = 2
-        DAMAGE_MULTIPLIER = 8
+        DAMAGE_MULTIPLIER = 7
         fireball_dmg = self.interactions.roll_dice(
             DAMAGE_MULTIPLIER) * ROLL_MULTIPLIER
         target.health -= fireball_dmg

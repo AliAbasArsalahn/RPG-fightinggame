@@ -4,8 +4,7 @@
 class Attributes():
     """
     Attributes class.
-    Includes: level, experience, strength, intellect, agility, stamina
-    methods:
+    Properties: level, experience, strength, intellect, agility, stamina
     """
 
     def __init__(self) -> None:
