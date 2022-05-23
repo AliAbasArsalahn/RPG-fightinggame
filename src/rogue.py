@@ -20,7 +20,9 @@ class Rogue(Character):
 
     def dagger_attack(self) -> int:
         """dagger_attack method. Calculates damage done and returns it as integer."""
-        damage = self.roll_dice(5) * 2
+        DAMAGE_MULIPLIER = 4
+        ROLL_MULTIPLIER = 2
+        damage = self.roll_dice(DAMAGE_MULIPLIER) * ROLL_MULTIPLIER
         return damage
 
     def stealth(self) -> None:

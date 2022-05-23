@@ -34,4 +34,5 @@ class Mage(Character):
     def healing(self) -> None:
         """calls function roll dice. Increases current_health by that amount"""
         HEALING_MULTIPLIER = 4
-        self.attributes.current_health += self.interactions.roll_dice(HEALING_MULTIPLIER)
+        self.attributes.current_health += self.interactions.roll_dice(
+            HEALING_MULTIPLIER)
