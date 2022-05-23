@@ -10,7 +10,8 @@ from rogue import Rogue
 
 class TestMage(unittest.TestCase):
     """
-    Tests: mana
+    SetUp: Mage object and rogue object as test enemy
+    Tests: mana, fireball, magic_missile
     """
 
     def setUp(self) -> None:
@@ -24,9 +25,6 @@ class TestMage(unittest.TestCase):
 
     def tearDown(self) -> None:
         pass
-
-    def test_mana(self) -> None:
-        self.assertTrue(self.mage.attributes.mana == 100)
 
     def test_fireball(self) -> None:
         pass
