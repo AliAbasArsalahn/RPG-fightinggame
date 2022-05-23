@@ -22,13 +22,16 @@ class Mage(Character):
 
     def magic_missile(self, target: object) -> None:
         """computes magic missile damage. Damage=1d6"""
-        magic_missile_damage = self.roll_dice(7)
+        DAMAGE_MULTIPLIER = 6
+        magic_missile_damage = self.roll_dice(DAMAGE_MULTIPLIER)
         target.health -= magic_missile_damage
 
     def mirror_images(self) -> None:
         """increases self.dodgechance for 2 rounds by 50%"""
-        self.attributes.dodge_chance += 0.5
+        DODGE_INCREASE = 0.5
+        self.attributes.dodge_chance += DODGE_INCREASE
 
     def healing(self) -> None:
         """calls function roll dice. Increases current_health by that amount"""
-        self.attributes.current_health += self.interactions.roll_dice(5)
+        HEALING_MULTIPLIER = 4
+        self.attributes.current_health += self.interactions.roll_dice(HEALING_MULTIPLIER)
