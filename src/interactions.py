@@ -9,8 +9,11 @@ class Interactions:
     Methods: roll_dice, combat, speak
     """
     def roll_dice(max_range: int) -> int:
-        """Returns a random integer"""
-        return randrange(1, max_range)
+        """
+        Takes an int as argument, increments it by one and returns a random number,
+        that is between the given number and 1.
+        """
+        return randrange(1, max_range + 1)
 
     # incomplete
     def combat(object_1: object, object_2: object) -> None:
