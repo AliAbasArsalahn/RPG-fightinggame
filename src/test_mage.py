@@ -20,8 +20,6 @@ class TestMage(unittest.TestCase):
         self.mage.attributes.intellect = 10
         self.mage.attributes.agility = 10
         self.mage.attributes.mana = 100
-        self.enemy = Rogue()
-        self.enemy.attributes.stamina = 10
 
     def tearDown(self) -> None:
         pass
