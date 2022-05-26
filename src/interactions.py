@@ -8,6 +8,7 @@ class Interactions:
     Interactions class. Contains generic Methods, that characters can use.
     Methods: roll_dice, combat, speak
     """
+    @staticmethod
     def roll_dice(max_range: int) -> int:
         """
         Takes an int as argument, increments it by one and returns a random number,

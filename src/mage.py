@@ -12,13 +12,13 @@ class Mage(Character):
     inherits: Name, race, attributes, interactions from character.
     """
 
-    def fireball(self, target: object) -> None:
+    def fireball(self) -> int:
         """computes fireball damage. Damage=2d7"""
         ROLL_MULTIPLIER = 2
         DAMAGE_MULTIPLIER = 7
         fireball_dmg = self.interactions.roll_dice(
             DAMAGE_MULTIPLIER) * ROLL_MULTIPLIER
-        target.health -= fireball_dmg
+        return fireball_dmg
 
     def magic_missile(self, target: object) -> None:
         """computes magic missile damage. Damage=1d6"""

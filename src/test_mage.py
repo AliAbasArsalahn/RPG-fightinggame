@@ -28,11 +28,10 @@ class TestMage(unittest.TestCase):
 
     def test_fireball(self) -> None:
         """
-        Fireball damage in expected range
-        Fireball is able to decrease enemy health
+        Fireball damage is in expected range
         """
-        pass
-            
+        self.assertTrue(self.mage.fireball() >=
+                        2 and self.mage.fireball() <= 14)
 
     def test_magic_missile(self) -> None:
         pass
