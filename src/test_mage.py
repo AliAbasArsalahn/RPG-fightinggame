@@ -32,7 +32,11 @@ class TestMage(unittest.TestCase):
                         2 and self.mage.fireball() <= 14)
 
     def test_magic_missile(self) -> None:
-        pass
+        """
+        magic missile damage is in expected range
+        """
+        self.assertTrue(self.mage.magic_missile() >=
+                        1 and self.mage.magic_missile() <= 6)
 
 
 if __name__ == '__main__':
