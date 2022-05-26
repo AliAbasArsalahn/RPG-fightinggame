@@ -3,4 +3,6 @@
 
 class Controller:
     """Controller class"""
-    pass
+    @staticmethod
+    def health_increase(character: object, amount: int) -> None:
+        character.health += amount
