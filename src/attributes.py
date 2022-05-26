@@ -77,7 +77,7 @@ class Attributes():
         if value > 0:
             self._intellect = value
         MANA_MULTIPLIER = 10
-        self._max_mana = self._intellect * MANA_MULTIPLIER
+        self._max_mana = self.intellect * MANA_MULTIPLIER
 
     @property
     def mana(self) -> int:

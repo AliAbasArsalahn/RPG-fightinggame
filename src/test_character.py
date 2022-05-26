@@ -28,7 +28,7 @@ class TestCharacter(unittest.TestCase):
         self.assertTrue(self.character.attributes._dodge_chance == 0.1)
 
     def test_mana(self) -> None:
-        pass
+        self.assertTrue(self.character.attributes._max_mana == 100)
 
     def test_level(self) -> None:
         pass
