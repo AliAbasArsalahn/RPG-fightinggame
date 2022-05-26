@@ -2,6 +2,7 @@
 Module: Mage.
 implementes methods and attributes for the mage class.
 """
+from email.header import Header
 from character import Character
 
 
@@ -34,5 +35,5 @@ class Mage(Character):
     def healing(self) -> None:
         """calls function roll dice. Increases current_health by that amount"""
         HEALING_MULTIPLIER = 4
-        self.attributes.current_health += self.interactions.roll_dice(
-            HEALING_MULTIPLIER)
+        healing_amount = self.interactions.roll_dice(HEALING_MULTIPLIER)
+        return healing_amount

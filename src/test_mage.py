@@ -38,6 +38,12 @@ class TestMage(unittest.TestCase):
         self.assertTrue(self.mage.magic_missile() >=
                         1 and self.mage.magic_missile() <= 6)
 
+    def test_healing(self) -> None:
+        """
+        healing amount is in expected range
+        """
+        self.assertTrue(self.mage.healing() >= 1 and self.mage.healing() <= 4)
+
 
 if __name__ == '__main__':
     unittest.main()
