@@ -2,7 +2,7 @@
 Module: Mage.
 implementes methods and attributes for the mage class.
 """
-from email.header import Header
+
 from character import Character
 
 
