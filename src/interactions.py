@@ -1,6 +1,7 @@
 """This module hosts interactions between character objects"""
 
 from random import randrange
+from character import Character
 
 
 class Interactions:
@@ -17,11 +18,15 @@ class Interactions:
         return randrange(1, max_range + 1)
 
     # incomplete
-    def combat(object_1: object, object_2: object) -> None:
+    def combat(object_1: Character, object_2: Character) -> None:
         """Combat function."""
+        object_1.interactions.
         both_combatants_alive = True
+        if object_1.attributes.health >= 0 or object_2.attributes.health >= 0:
+            both_combatants_alive = False
         while both_combatants_alive:
-            pass
+            if object_1.attributes.health >= 0 or object_2.attributes.health >= 0:
+                both_combatants_alive = False
 
     def speak() -> None:
         pass
