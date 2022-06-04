@@ -18,14 +18,15 @@ class Interactions:
         return randrange(1, max_range + 1)
 
     # incomplete
-    def combat(object_1: Character, object_2: Character) -> None:
+
+    def combat(player: Character, npc: Character) -> None:
         """Combat function."""
-        object_1.interactions.
+        # player.interactions.
         both_combatants_alive = True
-        if object_1.attributes.health >= 0 or object_2.attributes.health >= 0:
+        if player.attributes.health >= 0 or npc.attributes.health >= 0:
             both_combatants_alive = False
         while both_combatants_alive:
-            if object_1.attributes.health >= 0 or object_2.attributes.health >= 0:
+            if player.attributes.health >= 0 or npc.attributes.health >= 0:
                 both_combatants_alive = False
 
     def speak() -> None:
