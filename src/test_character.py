@@ -7,7 +7,7 @@ import unittest
 
 class TestCharacter(unittest.TestCase):
     """
-    Tests:
+    Tests: max_health, dodge_chance, mana, level
     """
 
     def setUp(self) -> None:

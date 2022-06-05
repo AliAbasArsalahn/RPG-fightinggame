@@ -1,4 +1,7 @@
-"""This module hosts interactions between character objects"""
+"""
+interactions.py
+This module hosts interactions between character objects
+"""
 
 from random import randrange
 from character import Character
@@ -17,12 +20,20 @@ class Interactions:
         """
         return randrange(1, max_range + 1)
 
+    @staticmethod
+    def initiative(player: Character, enemy: Character) -> int:
+        roll1 = player.interactions.roll_dice()
+        roll2 = enemy.interactions.roll_dice()
+        return roll1, roll2
+        
     # incomplete
 
     def combat(player: Character, npc: Character) -> None:
         """Combat function."""
-        # player.interactions.
         both_combatants_alive = True
+        roll1, roll2 = initiative(player, npc)
+        if roll1 > roll2:
+            pass
         if player.attributes.health >= 0 or npc.attributes.health >= 0:
             both_combatants_alive = False
         while both_combatants_alive:
