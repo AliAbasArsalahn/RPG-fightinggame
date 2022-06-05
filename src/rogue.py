@@ -1,6 +1,3 @@
-# Projekt: RPG-fightinggame | Modul: Rogue
-# Author: Ali Abas Arsalahn
-# Datum: 25.04.2022
 """
 rogue module.
 implementation: class rogue
