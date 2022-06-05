@@ -25,10 +25,8 @@ class Interactions:
         roll1 = player.interactions.roll_dice()
         roll2 = enemy.interactions.roll_dice()
         return roll1, roll2
-        
-    # incomplete
 
-    def combat(player: Character, npc: Character) -> None:
+    def combat(self, player: Character, npc: Character) -> None:
         """Combat function."""
         both_combatants_alive = True
         roll1, roll2 = self.initiative(player, npc)
