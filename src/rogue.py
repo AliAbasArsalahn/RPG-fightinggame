@@ -13,9 +13,8 @@ from character import Character
 
 class Rogue(Character):
     """
-    Rogue class.
-    Methods: dagger_attack
-    Properties:
+    Rogue class. Extends Character
+    Methods: dagger_attack, stealth
     """
 
     def dagger_attack(self) -> int:
