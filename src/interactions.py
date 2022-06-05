@@ -31,7 +31,7 @@ class Interactions:
     def combat(player: Character, npc: Character) -> None:
         """Combat function."""
         both_combatants_alive = True
-        roll1, roll2 = initiative(player, npc)
+        roll1, roll2 = self.initiative(player, npc)
         if roll1 > roll2:
             pass
         if player.attributes.health >= 0 or npc.attributes.health >= 0:
