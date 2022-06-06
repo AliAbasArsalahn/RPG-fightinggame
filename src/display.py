@@ -15,19 +15,14 @@ class Display():
         self.surface = pygame.Surface((self.width, self.height))
         self.FPS = fps
         self.clock = pygame.time.Clock()
-        self.COLOURS = {
-            "white": (255, 255, 255)
-        }
 
     def draw_window(self) -> None:
         pygame.display.set_caption(self.title)
-        # self.WIN.fill(self.COLOURS["white"])
         self.WIN.blit(self.surface, (0, 0))
         pygame.display.update()
 
     def window(self) -> None:
         run = True
-        # surface = pygame.Surface(self.width, self.height)
         while run:
             self.draw_window()
             self.clock.tick(self.FPS)
