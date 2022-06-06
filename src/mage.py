@@ -2,8 +2,10 @@
 Module: Mage.
 implementes methods and attributes for the mage class.
 """
+from typing import TYPE_CHECKING
 
-from character import Character
+if TYPE_CHECKING:
+    from character import Character
 
 
 class Mage(Character):
