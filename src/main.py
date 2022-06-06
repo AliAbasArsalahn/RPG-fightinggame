@@ -1,9 +1,11 @@
 """main.py module"""
 
+import pygame
+
 
 def main() -> None:
     """main loop. Opens a window"""
-    pass
+    pygame.init()
 
 
 if __name__ == '__main__':
