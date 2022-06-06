@@ -4,7 +4,10 @@ This module hosts interactions between character objects
 """
 
 from random import randrange
-from character import Character
+from typing import TYPE_CHECKING
+
+if TYPE_CHECKING:
+    from character import Character
 
 
 class Interactions:
