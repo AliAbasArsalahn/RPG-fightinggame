@@ -9,7 +9,8 @@ class Name:
         self._title: str = None
         self._first_name: str = None
         self._last_name: str = None
-        self._alias: str = None
+        self._alias: str = self._first_name[:1].lower(
+        ) + self._last_name[:3].lower()
 
     @property
     def title(self) -> str:
@@ -50,12 +51,3 @@ class Name:
         MAX_FIRSTNAME_LENGTH = 15
         if str.__instancecheck__(value) and value < MAX_FIRSTNAME_LENGTH:
             self._last_name = value
-
-    @property
-    def alias(self) -> str:
-        return self._alias
-
-    @alias.setter
-    def alias(self) -> None:
-        self._alias = self._first_name[:1].lower(
-        ) + self._last_name[:3].lower()
