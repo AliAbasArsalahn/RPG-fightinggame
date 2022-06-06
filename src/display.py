@@ -1,6 +1,7 @@
 """display.py module"""
 
 import pygame
+from sys import exit
 
 
 class Display():
@@ -26,10 +27,12 @@ class Display():
     def window(self) -> None:
         run = True
         while run:
+            self.draw_window()
             self.clock.tick(self.FPS)
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     run = False
+                    exit()
 
             self.draw_window()
 
