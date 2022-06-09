@@ -8,6 +8,7 @@ class Display():
     """Display class; inherits from pygame.display"""
 
     def __init__(self, height: int, width: int, title: str, fps: int) -> None:
+        """Display constructor"""
         self.height = height
         self.width = width
         self.title = title
@@ -22,6 +23,7 @@ class Display():
         pygame.display.update()
 
     def window(self) -> None:
+        """opens a window. Window get's opened with set framerate from self.clock"""
         run = True
         while run:
             self.draw_window()
