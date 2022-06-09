@@ -11,6 +11,7 @@ class TestCharacter(unittest.TestCase):
     """
 
     def setUp(self) -> None:
+        """Test Character get's created with set attributes"""
         self.character = Character()
         self.character.attributes.stamina = 10
         self.character.attributes.strength = 10
