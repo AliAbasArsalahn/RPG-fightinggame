@@ -38,3 +38,10 @@ class Mage(Character):
         HEALING_MULTIPLIER = 4
         healing_amount = self.interactions.roll_dice(HEALING_MULTIPLIER)
         return healing_amount
+
+    SPELLS = {
+        1: fireball(),
+        2: magic_missile(),
+        3: mirror_images(),
+        4: healing()
+    }
