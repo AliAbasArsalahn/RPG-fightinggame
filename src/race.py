@@ -15,9 +15,11 @@ class Race():
 
     @property
     def race(self) -> None:
+        """race getter"""
         return self._race
 
     @race.setter
     def race(self, value: str) -> None:
+        """sets race if argument is in AVAILABLE RACES"""
         if value in self.AVAILABLE_RACES:
             self._race = value

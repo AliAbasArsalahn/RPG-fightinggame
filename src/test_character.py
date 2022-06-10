@@ -11,6 +11,7 @@ class TestCharacter(unittest.TestCase):
     """
 
     def setUp(self) -> None:
+        """Test Character get's created with set attributes"""
         self.character = Character()
         self.character.attributes.stamina = 10
         self.character.attributes.strength = 10
@@ -22,12 +23,15 @@ class TestCharacter(unittest.TestCase):
         pass
 
     def test_max_health(self) -> None:
+        """Tests if _max_health get's increased by stamina."""
         self.assertTrue(self.character.attributes._max_health == 100)
 
     def test_dodge_chance(self) -> None:
+        """Tests if _dodge_chance get's increased by agility"""
         self.assertTrue(self.character.attributes._dodge_chance == 0.1)
 
     def test_mana(self) -> None:
+        """Tests if _max_mana get's increased by intellect."""
         self.assertTrue(self.character.attributes._max_mana == 100)
 
     def test_level(self) -> None:
