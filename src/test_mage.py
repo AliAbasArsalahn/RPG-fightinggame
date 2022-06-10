@@ -15,6 +15,7 @@ class TestMage(unittest.TestCase):
     """
 
     def setUp(self) -> None:
+        """Test mage get's setup with default attribute values."""
         self.mage = Mage()
         self.mage.attributes.strength = 10
         self.mage.attributes.intellect = 10
