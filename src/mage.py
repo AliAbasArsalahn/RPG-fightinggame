@@ -40,8 +40,8 @@ class Mage(Character):
         return healing_amount
 
     SPELLS = {
-        1: fireball(),
-        2: magic_missile(),
-        3: mirror_images(),
-        4: healing()
+        1: fireball,
+        2: magic_missile,
+        3: mirror_images,
+        4: healing
     }
