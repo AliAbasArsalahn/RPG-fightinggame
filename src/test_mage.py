@@ -5,7 +5,6 @@ Test_mage Module
 
 import unittest
 from mage import Mage
-from rogue import Rogue
 
 
 class TestMage(unittest.TestCase):

@@ -9,8 +9,8 @@ class Name:
         self._title: str = None
         self._first_name: str = None
         self._last_name: str = None
-        self._alias: str = self._first_name[:1].lower(
-        ) + self._last_name[:3].lower()
+        # self._alias: str = self._first_name[:1].lower(
+        # ) + self._last_name[:3].lower()
 
     @property
     def title(self) -> str:

@@ -29,10 +29,11 @@ class Interactions:
         roll2 = enemy.interactions.roll_dice()
         return roll1, roll2
 
-    def combat(self, player: Character, npc: Character) -> None:
+    @staticmethod
+    def combat(player: Character, npc: Character) -> None:
         """Combat function."""
         both_combatants_alive = True
-        roll1, roll2 = self.initiative(player, npc)
+        roll1, roll2 = Interactions.initiative(player, npc)
         if roll1 > roll2:
             pass
         if player.attributes.health >= 0 or npc.attributes.health >= 0:
