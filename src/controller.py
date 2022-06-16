@@ -12,10 +12,3 @@ class Controller:
     @staticmethod
     def health_increase(character: Character, amount: int) -> None:
         character.attributes.health += amount
-
-    # @staticmethod
-    # def spellbook(spells: dict) -> No ne:
-    #     for spell in spells:
-    #         print(spell)
-    #     spell_select = int(input("Choose one ability! "))
-    #     spells[spell_select]()
