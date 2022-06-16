@@ -16,12 +16,15 @@ class Character():
     def __init__(self) -> None:
         """
         Character Creation.
-        Required Arguments: Name, Race
         """
         self.name = Name()
         self.race = Race()
         self.attributes = Attributes()
         self.interactions = Interactions()
+        self.spells = {}
+
+    def spellbook(self) -> None:
+        print(self.spells.items())
 
     def __repr__(self) -> str:
         """repr method"""

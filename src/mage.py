@@ -13,6 +13,14 @@ class Mage(Character):
     methods: Fireball, magic missile, mirror images, healing
     inherits: Name, race, attributes, interactions from character.
     """
+    def __init__(self) -> None:
+        super().__init__()
+        self.spells = {
+            1: self.fireball,
+            2: self.magic_missile,
+            3: self.mirror_images,
+            4: self.healing
+        }
 
     def fireball(self) -> int:
         """computes fireball damage. Damage=2d7"""
@@ -38,10 +46,3 @@ class Mage(Character):
         HEALING_MULTIPLIER = 4
         healing_amount = self.interactions.roll_dice(HEALING_MULTIPLIER)
         return healing_amount
-
-    SPELLS = {
-        1: fireball,
-        2: magic_missile,
-        3: mirror_images,
-        4: healing
-    }
