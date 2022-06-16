@@ -23,9 +23,6 @@ class Character():
         self.interactions = Interactions()
         self.spells = {}
 
-    def spellbook(self) -> None:
-        print(self.spells.items())
-
     def __repr__(self) -> str:
         """repr method"""
         pass

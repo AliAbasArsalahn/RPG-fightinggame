@@ -21,7 +21,6 @@ class Combat:
         spells[spell_select]()
 
     @staticmethod
-    def list_spellbook(*args: list[Character]) -> None:
+    def list_spellbook(*args: Character) -> None:
         for character in args:
-            character.spellbook()
-            # print(character.spellbook)
+            print(character.spells.items)
