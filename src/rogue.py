@@ -13,7 +13,6 @@ class Rogue(Character):
     Rogue class. Extends Character
     Methods: dagger_attack, stealth
     """
-
     def __init__(self) -> None:
         super().__init__()
         self.spells = {
